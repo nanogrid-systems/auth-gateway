@@ -10,7 +10,7 @@ public class EdgeproxyClient {
 
     public String fetchEdgeproxy(String id) {
         return client.get()
-                .uri("/edgeproxy/" + id)
+                .uri("/v2/edgeproxy/" + id)
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
