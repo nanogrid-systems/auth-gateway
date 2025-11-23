@@ -3,7 +3,7 @@ package com.nanogrid.authgateway.controller;
 import org.springframework.web.bind.annotation.*;
 import com.nanogrid.authgateway.client.EdgeproxyClient;
 @RestController
-@RequestMapping("/authgateway")
+@RequestMapping("/v2")
 public class AuthgatewayController {
     private final EdgeproxyClient edgeproxyClient;
     public AuthgatewayController(EdgeproxyClient edgeproxyClient) {
@@ -12,6 +12,6 @@ public class AuthgatewayController {
 
     @GetMapping("/{id}")
     public String getAuthgateway(@PathVariable String id) {
-        String edgeproxyData = edgeproxyClient.fetchEdgeproxy(id);        return "auth-gateway data for ID: " + id;
+        String edgeproxyData = edgeproxyClient.fetchEdgeproxy(id);        return "{"broken":true,"id":"" + id + ""}";
     }
 }
