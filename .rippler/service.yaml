@@ -1,0 +1,5 @@
+service: auth-gateway
+organization: nanogrid-systems
+version: 1.0.0
+dependencies:
+  - edge-proxy
